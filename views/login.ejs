@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in or sign up - Airbnb</title>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="icon" href="https://a0.muscache.com/airbnb/static/logotype_3x_logomark_air-960x960-e883a992817d05051a8f6d3570c910a9.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="modal-background">
+        <div class="login-container">
+            <div class="login-header">
+                <span class="close-btn">&times;</span>
+                <h3>Log in or sign up</h3>
+            </div>
+            <div class="login-content">
+                <h2>Welcome to Airbnb</h2>
+                <form class="login-form" action="/login" method="POST">
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                    <p class="terms-text forgot-password">
+                        <a href="#">Forgot password?</a>
+                    </p>
+                </form>
+
+                <div class="divider">
+                    <span class="divider-text">or</span>
+                </div>
+
+                <div class="social-login-container">
+                    <button class="social-btn social-google">
+                        <img src="https://www.google.com/favicon.ico" alt="Google logo">
+                        <span>Continue with Google</span>
+                    </button>
+                    <button class="social-btn social-facebook">
+                        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yQ/r/Lw4D4f6gM6f.png" alt="Facebook logo">
+                        <span>Continue with Facebook</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

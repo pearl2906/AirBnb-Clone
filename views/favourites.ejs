@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Favourites</title>
+    <link rel="stylesheet" href="/fav.css"> </head>
+<body>
+    <div class="container">
+        <h1>Your Favourites</h1>
+
+        <% if (favourites.length > 0) {  %>
+            <div class="favourites-list">
+                <% favourites.forEach(home => { %>
+                    <a href="/homes/<%= home.id %>" class="favourite-card">
+                        <img src="<%= home.imageUrl %>" alt="<%= home.houseName %>">
+                        <div class="card-content">
+                            <h2><%= home.houseName %></h2>
+                            <p class="location"><%= home.location %></p>
+                            <p class="price"><strong>Rs.<%= home.price %></strong> per night</p>
+                        </div>
+                    </a>
+                <% }); %>
+            </div>
+        <% } else { %>
+            <div class="empty-state">
+                <p>You haven't added any homes to your favourites yet.</p>
+                <a href="/" class="btn">Explore Homes</a>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

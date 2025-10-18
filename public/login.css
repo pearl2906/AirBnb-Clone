@@ -1,0 +1,255 @@
+/* General body and typography styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Modal background overlay */
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main login container */
+.login-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 568px;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header section */
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 16px 24px;
+    position: relative;
+}
+
+.login-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.close-btn {
+    position: absolute;
+    left: 24px;
+    font-size: 24px;
+    font-weight: 300;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* Main content area */
+.login-content {
+    padding: 24px;
+}
+
+.login-content h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+/* Input group styling for email and password */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #fcfcfc;
+}
+
+.input-group input:first-child {
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px 8px 0 0;
+}
+
+.input-group input:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.input-group input:focus {
+    border-color: #000;
+}
+
+.terms-text {
+    font-size: 12px;
+    color: #717171;
+    margin: 16px 0;
+    line-height: 1.5;
+}
+
+.terms-text a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.terms-text a:hover {
+    text-decoration: underline;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: -10px;
+}
+
+/* Login button styling */
+.continue-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #e51d54;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.continue-btn:hover {
+    background-color: #d11a4a;
+}
+
+/* Divider "or" line */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 0.5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 0.5em;
+}
+
+.divider-text {
+    color: #717171;
+    font-size: 14px;
+}
+
+/* Social login buttons */
+.social-login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.social-btn:hover {
+    border-color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.social-btn img {
+    height: 20px;
+    width: 20px;
+    margin-right: 12px;
+}
+
+.social-google img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.social-facebook img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .login-container {
+        border-radius: 0;
+        box-shadow: none;
+        height: 100%;
+        max-width: none;
+    }
+
+    .modal-background {
+        background-color: #fff;
+    }
+
+    .login-header {
+        padding: 16px;
+    }
+
+    .close-btn {
+        left: 16px;
+    }
+
+    .login-content {
+        padding: 16px;
+    }
+}

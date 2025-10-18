@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Details</title>
+    <link rel="stylesheet" href="/home-details.css">
+</head>
+<body>
+    <div class="container">
+        <% if (home) { %>
+            <h1><%= home.houseName %></h1>
+            <p class="location"><%= home.location %></p>
+
+            <img src="<%= home.imageUrl %>" alt="<%= home.houseName %>" class="main-image">
+            
+            <div class="details-container">
+                <div class="info-column">
+                    <h2>Property Description</h2>
+                    <p><%= home.description %></p>
+                </div>
+                
+                <div class="booking-card">
+                    <div class="price">
+                        <strong>Rs.<%= home.price %></strong> per night
+                    </div>
+                    <div class="details">
+                        <p><strong>Guests:</strong> <%= home.guests %></p>
+                    </div>
+                    <button>Book Now</button>
+                </div>
+                <div>
+                    <form action="/favourites" method="POST">
+                        <button type="submit" class="fav">Add to favourite</button>
+                        <input type="hidden" name="id" value="<%= home._id %>">
+                    </form>
+                </div>
+            </div>
+        <% } else { %>
+            <h2><%= message || "Home not found" %></h2>
+        <% } %>
+    </div>
+</body>
+</html>

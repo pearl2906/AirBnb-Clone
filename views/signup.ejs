@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up for Airbnb</title>
+    <link rel="stylesheet" href="/signup.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">airbnb</a>
+        </div>
+    </header>
+
+    <main class="signup-container">
+        <div class="signup-box">
+            <h2>Sign up</h2>
+            
+            <% if (errorMessage) { %>
+                <div class="error-message"><%= errorMessage %></div>
+            <% } %>
+
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        value="<%= oldInput.name %>"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        value="<%= oldInput.email %>"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        id="confirmPassword" 
+                        name="confirmPassword" 
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-signup">Agree and continue</button>
+            </form>
+
+            <div class="login-link">
+                Already have an Airbnb account? <a href="/login">Log in</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Airbnb, Inc.</p>
+    </footer>
+</body>
+</html>

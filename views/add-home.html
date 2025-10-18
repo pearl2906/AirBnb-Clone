@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Host</title>
+    <link rel="stylesheet" href="/add-home.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">airbnb</a>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>Register your home here: 🏠</h1>
+        <form action="/host/add-home" method="POST">
+            <div class="form-group">
+                <label for="houseName">House Name:</label>
+                <input type="text" id="houseName" name="houseName" placeholder="e.g., Cozy Cabin by the Lake" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="5" placeholder="Tell guests about your place..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="e.g., Kasauli, Goa ,Bombay" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price per night (Rs.):</label>
+                <input type="number" id="price" name="price" placeholder="e.g., 150" required>
+            </div>
+            <div class="form-group">
+                <label for="guests">Number of guests:</label>
+                <input type="number" id="guests" name="guests" placeholder="e.g., 4" required>
+            </div>
+            <div class="form-group">
+                <label for="image-url">Image URL:</label>
+                <input type="url" id="image-url" name="imageUrl" placeholder="Paste a link to your home's photo" required>
+            </div>
+            <button type="submit" class="submit-btn">Register Home</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 Airbnb, Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>

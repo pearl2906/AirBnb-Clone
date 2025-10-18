@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home page</title>
+    <link rel="stylesheet" href="./home.css"/>
+</head>
+<body>
+    <header>
+        <h1> Here are our Registered homes : </h1>
+         <ul>
+            <% registeredHomes.forEach(home =>{ %>
+            <li>
+                <%= home.houseName %>
+            </li>
+         <% }) %>
+        </ul>
+    </header>
+    <main>
+         <a href="/">Home Page</a>
+         <a href ="/host/add-home"> Add home </a>
+    </main>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Homes</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">airbnb</a>
+            </div>
+<div class="nav-links">
+    <% if (isLoggedIn) { %>
+        <a href="/host/add-home">Become a host</a>
+        <a href="/favourites">Added to favourite</a>
+        <form action="/logout" method="POST" >
+        <button type="submit" class="logout-button">Log out</button>
+    </form>
+
+    <% } else { %>
+        <a href="/login">Log in</a>
+       <form action="/signup" method="POST" >
+        <button type="submit" class="signup-button" style= "inline">Sign up</button>
+    </form>
+    <% } %>
+</div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Find your next stay</h1>
+                <p>Discover unique homes and experiences around the world.</p>
+            </div>
+        </section>
+        <section class="homes-section">
+            <h2>Our Registered Homes</h2>
+            <div class="homes-grid">
+                <% if (registeredHomes && registeredHomes.length > 0) { %>
+                    <% registeredHomes.forEach(home => { %>
+                        <div class="home-card">
+                            <img src="<%= home.imageUrl %>" alt="<%= home.houseName %>">
+                            <div class="card-info">
+                                <h3><%= home.houseName %></h3>
+                                <p>📍 <%= home.location %></p>
+                                <p class="price"><span>Rs.<%= home.price %></span> / night</p>
+                                <button class="buttonBook">Book now</button>
+
+
+                                <a href ="/homes/<%= home._id %>">Details</a>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p class="no-homes-message">No homes have been registered yet. Be the first to add one! 🏡</p>
+                <% } %>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Airbnb, Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>
